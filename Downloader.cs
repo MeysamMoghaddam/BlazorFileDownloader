@@ -12,13 +12,13 @@ namespace FileDownloader
                 "import", "./_content/FileDownloader/downloader.js").AsTask());
         }
 
-        public async Task Download(byte[] file, string fileName)
+        public async Task Download(byte[] file, string fileName,string? target=null)
         {
             var fileStream = new MemoryStream(file);
             using var streamRef = new DotNetStreamReference(stream: fileStream);
 
             var module = await moduleTask.Value;
-            await module.InvokeVoidAsync("downloadFileFromStream", fileName, streamRef);
+            await module.InvokeVoidAsync("downloadFileFromStream", fileName, streamRef, target);
         }
 
         public async ValueTask DisposeAsync()
