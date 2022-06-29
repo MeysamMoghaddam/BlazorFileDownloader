@@ -1,10 +1,24 @@
-<Project Sdk="Microsoft.NET.Sdk.Razor">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>BlazorFileDownloader</Title>
+    <Description>download file in blazor wasm project from byte array</Description>
+    <Copyright>© Moghaddam. All rights reserved.</Copyright>
+    <PackageProjectUrl>https://github.com/MeysamMoghaddam/BlazorFileDownloader</PackageProjectUrl>
+    <PackageIcon>logo.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/MeysamMoghaddam/BlazorFileDownloader</RepositoryUrl>
+    <PackageTags>downloader blazordownloader filedownloader</PackageTags>
+    <PackageReleaseNotes>initial</PackageReleaseNotes>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="logo.png" />
+  </ItemGroup>
 
 
   <ItemGroup>
@@ -13,6 +27,17 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="logo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
